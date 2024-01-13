@@ -43,7 +43,6 @@ body * {
 
 #container {
   width: 360px;
-  border: 1px solid red;
   margin: 56px auto 0px;
   padding: 0 24px;
 }
@@ -52,19 +51,22 @@ body * {
 #profile {
   text-align: center;
   padding: 24px;
-  border: 1px solid red;
 }
 
 #profile img {
   width: 112px;
-  border: 1.5px solid red;
+  border: solid var(--text-color) 1px;
+  border-radius: 10px;
+}
+
+.light #profile img{
+  border: solid var(--text-color) 1px;
 }
 
 #profile p {
   font-weight: 500;
   line-height: 24px;
   margin-top: 8px;
-  border: 1.5px solid red;
 }
 
 /*switch*/
@@ -111,7 +113,6 @@ ul {
   flex-direction: column;
   gap: 16px;
   padding: 24px 0;
-  border: 1.5px solid red;
 }
 
 ul li a {
@@ -140,7 +141,6 @@ ul li a:hover {
   justify-content: center;
   padding: 24px 0;
   font-size: 24px;
-  border: 1.5px solid red;
 }
 
 #social-links a{
@@ -161,5 +161,4 @@ footer{
   padding: 24px 0;
   text-align: center;
   font-size: 14px;
-  border: 1px solid red;
 }
