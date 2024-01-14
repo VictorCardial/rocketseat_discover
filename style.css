@@ -6,7 +6,7 @@
 
 :root {
   --text-color: white;
-  --bg-img-url: url(./assets/bg-desktop.jpg);
+  --bg-img-url: url(./assets/bg-mobile.jpg);
   --btn-border-color: rgba(255, 255, 255, 0.5);
   --btn-bg-color: rgba(255, 255, 255, 0.05);
   --btn-bg-color-hover: rgba(255, 255, 255, 0.02);
@@ -34,6 +34,7 @@ body {
   /*short hand
   background: color image repeat position/size*/
   background:  var(--bg-img-url) no-repeat top center/cover;
+  height: 100vh;
 }
 
 body * {
@@ -42,7 +43,8 @@ body * {
 }
 
 #container {
-  width: 360px;
+  width: 100%;
+  max-width: 588px;
   margin: 56px auto 0px;
   padding: 0 24px;
 }
@@ -161,4 +163,15 @@ footer{
   padding: 24px 0;
   text-align: center;
   font-size: 14px;
+}
+
+/*media queries -trocar a imagem de fundo com base na largura*/
+@media (min-width: 700px){
+  :root{
+    --bg-img-url: url(./assets/bg-desktop.jpg);
+  }
+  
+  .light{
+    --bg-img-url: url(./assets/bg-desktop-light.jpg);
+  }
 }
