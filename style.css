@@ -10,7 +10,7 @@
   --btn-border-color: rgba(255, 255, 255, 0.5);
   --btn-bg-color: rgba(255, 255, 255, 0.05);
   --btn-bg-color-hover: rgba(255, 255, 255, 0.02);
-  --icon-social-link-hover:rgba(255, 255, 255, 0.2);
+  --icon-social-link-hover: rgba(255, 255, 255, 0.2);
 
   --switch-bg-icon: url(./assets/moon-stars.svg);
 }
@@ -21,7 +21,8 @@
   --btn-border-color: rgba(0, 0, 0, 0.5);
   --btn-bg-color: rgba(0, 0, 0, 0.05);
   --btn-bg-color-hover: rgba(0, 0, 0, 0.02);
-  --icon-social-link-hover:rgba(0, 0, 0, 0.1);
+  --icon-social-link-hover: rgba(0, 0, 0, 0.1);
+
   --switch-bg-icon: url(./assets/sun.svg);
 }
 
@@ -33,7 +34,7 @@ body {
 
   /*short hand
   background: color image repeat position/size*/
-  background:  var(--bg-img-url) no-repeat top center/cover;
+  background: var(--bg-img-url) no-repeat top center/cover;
   height: 100vh;
 }
 
@@ -61,7 +62,7 @@ body * {
   border-radius: 10px;
 }
 
-.light #profile img{
+.light #profile img {
   border: solid var(--text-color) 1px;
 }
 
@@ -72,13 +73,13 @@ body * {
 }
 
 /*switch*/
-#switch{
+#switch {
   position: relative;
   width: 64px;
   margin: 4px auto;
 }
 
-#switch button{
+#switch button {
   width: 32px;
   height: 32px;
   background: white var(--switch-bg-icon) no-repeat center;
@@ -90,14 +91,23 @@ body * {
   left: 0;
   z-index: 1;
   transform: translateY(-50%);
+
+  animation: slide-ligth-to-dark 0.2s;
 }
 
 .light #switch button {
-  right: 0;
-  left: inherit;
+  animation: slide-dark-to-light 0.2s forwards;
 }
 
-#switch span{
+#switch button:hover{
+  outline: 8px solid var(--icon-social-link-hover);
+}
+
+/*.light #switch button:hover{
+  outline: 8px solid var(--icon-social-link-hover);
+}*/
+
+#switch span {
   display: block;
   width: 64px;
   height: 24px;
@@ -145,7 +155,7 @@ ul li a:hover {
   font-size: 24px;
 }
 
-#social-links a{
+#social-links a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,24 +164,42 @@ ul li a:hover {
   border-radius: 50%;
 }
 
-#social-links a:hover{
+#social-links a:hover {
   background: var(--icon-social-link-hover);
 }
 
 /*footer*/
-footer{
+footer {
   padding: 24px 0;
   text-align: center;
   font-size: 14px;
 }
 
 /*media queries -trocar a imagem de fundo com base na largura*/
-@media (min-width: 700px){
-  :root{
+@media (min-width: 700px) {
+  :root {
     --bg-img-url: url(./assets/bg-desktop.jpg);
   }
-  
-  .light{
+
+  .light {
     --bg-img-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+/*animação do botão switch*/
+@keyframes slide-dark-to-light {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-ligth-to-dark {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
   }
 }
